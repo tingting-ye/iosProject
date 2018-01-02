@@ -31,7 +31,7 @@ export default class App extends Component {
   login() {
     if (!(this.state.username || this.state.password)) {
       alert('请填写信息');
-      return 
+      return
     }
     if (this.state.username === "admin" && this.state.password === "123") {
       alert('登录成功');
