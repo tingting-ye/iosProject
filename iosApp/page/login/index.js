@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, TabBarIOS, TextInput, TouchableOpacity, ImageBackground, Image, AlertIOS } from 'react-native'
 
+import HomeScene from '../home/index'
 import styles from '../../style/app'
 
 export default class App extends Component {
@@ -35,6 +36,9 @@ export default class App extends Component {
     }
     if (this.state.username === "admin" && this.state.password === "123") {
       alert('登录成功');
+      this.props.navigator.push({//还记得navigator作为属性传给了每一个scene吗！对了，就是这样取到他
+        scene: HomeScene,//通过push方法将一个scene入栈，push方法接收一个route，其中必须包含一个scene
+      })
     } else {
       alert('登录失败');
     }
