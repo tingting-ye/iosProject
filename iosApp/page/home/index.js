@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <View
         style={styles.container}>
-        <Text>登录成功!这是主页!</Text>
+        <Text>好讨厌的感觉，啊啊啊啊啊~~不开森</Text>
       </View>
     )
   }
