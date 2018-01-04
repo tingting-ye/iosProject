@@ -9,18 +9,41 @@ export default class Login extends Component {
   constructor(props) {
     super(props)
     this.renderScene = this.renderScene.bind(this)
+    this.configureScene = this.configureScene.bind(this)
   }
 
-  //第一次调用的时候，第一个参数route就是initialRoute
-  renderScene(route, navigator){
+  /**
+   * 配置场景动画
+   * @param route 路由
+   * @param routeStack 路由栈
+   * @returns {*} 动画
+   */
+  configureScene(route, routeStack) {
+    if (route.type == 'Bottom') {
+      return Navigator.SceneConfigs.FloatFromBottom; // 底部弹出
+    }
+    return Navigator.SceneConfigs.PushFromRight; // 右侧弹出
+  }
+
+  /**
+  * 使用动态页面加载
+  * @param route 路由
+  * @param navigator 导航器
+  * @returns {XML} 页面
+  */
+  renderScene(route, navigator) {
     return (
-      <route.scene navigator={navigator} />
+      <route.scene navigator={navigator} {...route.passProps}/>
     );
   }
 
   render() {
     return (
-      <Navigator initialRoute={{ scene: LoginScene }} renderScene={this.renderScene} />
+      <Navigator
+        initialRoute={{ scene: LoginScene }} //初始化路由(initialRoute)
+        onfigureScene={this.configureScene}//配置场景动画(configureScene)
+        renderScene={this.renderScene} //渲染场景(renderScene)
+      />
     )
   }
 }

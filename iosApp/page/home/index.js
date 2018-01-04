@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 
-import styles from '../../style/app'
+import styles from '../../style/home'
 
 export default class App extends Component {
   constructor(props) {
@@ -16,6 +16,13 @@ export default class App extends Component {
       <View
         style={styles.container}>
         <Text>好讨厌的感觉，啊啊啊啊啊~~不开森</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigator.pop()}>
+          <Text>
+            返回上一页
+          </Text>
+        </TouchableOpacity>
       </View>
     )
   }

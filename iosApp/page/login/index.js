@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Text, View, TabBarIOS, TextInput, TouchableOpacity, ImageBackground, Image, AlertIOS } from 'react-native'
 
 import HomeScene from '../home/index'
-import styles from '../../style/app'
+import styles from '../../style/login'
 
 export default class App extends Component {
   constructor(props) {
@@ -29,19 +29,20 @@ export default class App extends Component {
 
   password(key) { this.setState({ password: key }) }
 
-  login() {
-    if (!(this.state.username || this.state.password)) {
-      alert('请填写信息');
-      return
-    }
-    if (this.state.username === "admin" && this.state.password === "123") {
-      alert('登录成功');
+  login(type = 'Normal') {
+    // if (!(this.state.username || this.state.password)) {
+    //   alert('请填写信息');
+    //   return
+    // }
+    // if (this.state.username === "admin" && this.state.password === "123") {
+      // alert('登录成功');
       this.props.navigator.push({//还记得navigator作为属性传给了每一个scene吗！对了，就是这样取到他
         scene: HomeScene,//通过push方法将一个scene入栈，push方法接收一个route，其中必须包含一个scene
+        type:type
       })
-    } else {
-      alert('登录失败');
-    }
+    // } else {
+    //   alert('登录失败');
+    // }
   }
 
   render() {
@@ -69,7 +70,7 @@ export default class App extends Component {
               underlineColorAndroid={'transparent'}
             />
           </View>
-          <TouchableOpacity onPress={() => this.login()} style={styles.button}>
+          <TouchableOpacity onPress={() => this.login("Bottom")} style={styles.button}>
             <Text style={styles.btText}>登录</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
