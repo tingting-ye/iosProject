@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, TabBarIOS, TextInput, TouchableOpacity, ImageBackground, Image, AlertIOS } from 'react-native'
 
-import styles from '../../style/login'
+import styles from '../style/login'
 
 export default class LoginScene extends Component {
   constructor(props) {
@@ -49,9 +49,9 @@ export default class LoginScene extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground style={styles.img} source={require('../../img/timg.jpeg')} resizeMode='cover'>
+        <ImageBackground style={styles.img} source={require('../img/timg.jpeg')} resizeMode='cover'>
           <View style={styles.inputBox}>
-            <Image style={styles.icon} source={require('../../img/user.png')} />
+            <Image style={styles.icon} source={require('../img/user.png')} />
             <TextInput
               style={styles.input}
               placeholderTextColor={'rgba(255,255,255,0.5)'}//提示文本的颜色
@@ -61,7 +61,7 @@ export default class LoginScene extends Component {
             />
           </View>
           <View style={styles.inputBox}>
-            <Image style={styles.icon} source={require('../../img/lock.png')} />
+            <Image style={styles.icon} source={require('../img/lock.png')} />
             <TextInput
               style={styles.input}
               secureTextEntry={true}
