@@ -2,10 +2,9 @@
 import React, { Component } from 'react';
 import { Text, View, TabBarIOS, TextInput, TouchableOpacity, ImageBackground, Image, AlertIOS } from 'react-native'
 
-import HomeScene from '../home/index'
 import styles from '../../style/login'
 
-export default class App extends Component {
+export default class LoginScene extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,6 +16,10 @@ export default class App extends Component {
     this.password = this.password.bind(this) //忘记密码
     this.login = this.login.bind(this) //忘记密码
   }
+
+  static navigationOptions = {
+    header: null, // 当header为null时，顶部导航条隐藏
+  };
 
   forget() {
     AlertIOS.alert('提示', '忘记密码请联系系统管理员！', [
@@ -30,16 +33,14 @@ export default class App extends Component {
   password(key) { this.setState({ password: key }) }
 
   login(type = 'Normal') {
+    const { navigate } = this.props.navigation
     // if (!(this.state.username || this.state.password)) {
     //   alert('请填写信息');
     //   return
     // }
     // if (this.state.username === "admin" && this.state.password === "123") {
       // alert('登录成功');
-      this.props.navigator.push({//还记得navigator作为属性传给了每一个scene吗！对了，就是这样取到他
-        scene: HomeScene,//通过push方法将一个scene入栈，push方法接收一个route，其中必须包含一个scene
-        type:type
-      })
+      navigate("HomeScene")
     // } else {
     //   alert('登录失败');
     // }

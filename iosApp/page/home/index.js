@@ -4,25 +4,25 @@ import { Text, View, TouchableOpacity } from 'react-native'
 
 import styles from '../../style/home'
 
-export default class App extends Component {
+export default class HomeScene extends Component {
   constructor(props) {
     super(props)
     this.state = {
     }
   }
 
+  static navigationOptions = ({navigation, screenProps})=>({
+    headerTitle: "首页", // 导航条标题
+    headerLeft:null, // 导航条左侧返回键隐藏
+    headerRight:(<Text style={styles.headerRight}>我的</Text>)
+  })
+
   render() {
+    const { params } = this.props.navigation.state
     return (
       <View
         style={styles.container}>
-        <Text>好讨厌的感觉，啊啊啊啊啊~~不开森</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.props.navigator.pop()}>
-          <Text>
-            返回上一页
-          </Text>
-        </TouchableOpacity>
+        <Text >啊啊啊啊啊~~不开森</Text>
       </View>
     )
   }

@@ -5,6 +5,9 @@ import {
 
 var styles = StyleSheet.create(
 {
+  headerRight:{
+    width:50,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
