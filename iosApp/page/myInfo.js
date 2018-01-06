@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet,Image} from 'react-native'
 
 import styles from '../style/home'
 
@@ -13,7 +13,11 @@ export default class HomeScene extends Component {
 
   static navigationOptions = ({navigation, screenProps})=>({
     headerTitle: "我的", // 导航条标题
-    headerRight:null
+    headerLeft:null,
+    tabBarLabel: '我的',
+    tabBarIcon: () => (
+      <Image source={require('../img/lock.png')} style={{width:20,height:20}}/>
+    ),
   })
 
   render() {

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet,Image} from 'react-native'
 
 import styles from '../style/home'
 
@@ -14,7 +14,10 @@ export default class HomeScene extends Component {
   static navigationOptions = ({navigation, screenProps})=>({
     headerTitle: "首页", // 导航条标题
     headerLeft:null, // 导航条左侧返回键隐藏
-    headerRight:(<Text style={styles.headerRight} onPress={()=>{navigation.navigate("MyInfoScene")}}>我的</Text>)
+    tabBarLabel: '首页',
+    tabBarIcon: () => (
+      <Image source={require('../img/user.png')} style={{width:20,height:20}}/> 
+    ),
   })
 
   render() {
