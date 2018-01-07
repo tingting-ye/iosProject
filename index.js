@@ -35,15 +35,15 @@ const MyFirstProject = TabNavigator({
 				marginTop: 0,
 			},
 			tabStyle: {
-				marginTop: 10,
+				marginTop: -15,
 				height: 50,
 			},
 		},
 	});
 
 const App = StackNavigator({
-	LoginScene: { screen: LoginScene, path: 'app/login' }, // 登录界面
-	HomeScene: { screen: MyFirstProject, path: 'app/home' }, // 首页
+	HomeScene: { screen: MyFirstProject }, // 首页
+	LoginScene: { screen: LoginScene }, // 登录界面
 });
 
 AppRegistry.registerComponent('reactNativeOne', () => App)
