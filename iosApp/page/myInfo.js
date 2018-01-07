@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet,Image} from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import base from '../style/base'
 
@@ -15,6 +16,9 @@ export default class HomeScene extends Component {
     headerTitle: "我的", // 导航条标题
     headerLeft:null,
     tabBarLabel: '我的',
+    tabBarIcon: ({ tintColor, focused }) => (
+        <Icon name="rocket" size={30} color="#900" />
+    ),
   })
 
   render() {
