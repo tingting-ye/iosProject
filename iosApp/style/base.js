@@ -13,4 +13,4 @@ var styles = StyleSheet.create(
   },
 });
 
-module.exports = styles;
+module.exports = styles

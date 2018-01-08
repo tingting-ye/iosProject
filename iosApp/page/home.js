@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet,Image} from 'react-native'
-// import {Icon} from 'react-native-vector-icons'
+import { Text, View, TouchableOpacity,  ScrollView, StyleSheet,Image} from 'react-native'
+import { Button } from 'antd-mobile'
 
 import base from '../style/base'
 
@@ -10,6 +10,7 @@ export default class HomeScene extends Component {
     super(props)
     this.state = {
     }
+    this.clickIcon = this.clickIcon.bind(this)
   }
 
   static navigationOptions = ({navigation, screenProps})=>({
@@ -25,12 +26,18 @@ export default class HomeScene extends Component {
     // ),
   })
 
+  clickIcon(){
+    const { navigate } = this.props.navigation
+    navigate("IconScene")
+  }
+
   render() {
     const { params } = this.props.navigation.state
     return (
       <View
         style={base.container}>
         <Text >啊啊啊啊啊~~不开森</Text>
+        <Button onClick={this.clickIcon}>图标</Button>
       </View>
     )
   }
