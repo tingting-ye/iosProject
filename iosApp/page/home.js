@@ -37,7 +37,7 @@ export default class HomeScene extends Component {
       <View
         style={base.container}>
         <Text >啊啊啊啊啊~~不开森</Text>
-        <Button onClick={this.clickIcon}>图标</Button>
+        <Button type="primary" onClick={this.clickIcon}>图标</Button>
       </View>
     )
   }

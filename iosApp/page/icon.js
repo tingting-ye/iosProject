@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet,Image} from 'react-native'
+import { InputItem} from 'antd-mobile'
+
 
 import base from '../style/base'
 
@@ -15,12 +17,15 @@ export default class HomeScene extends Component {
     headerTitle: "图标", // 导航条标题
   })
 
-  render() {
-    const { params } = this.props.navigation.state
+  render() { 
     return (
       <View
         style={base.container}>
-        <Text >好多信息。怎么破。。不知道哎</Text>
+          <InputItem
+            type={"money"}
+            placeholder="start from right"
+            clear
+          >光标在右</InputItem>
       </View>
     )
   }
