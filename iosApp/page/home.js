@@ -28,7 +28,7 @@ export default class HomeScene extends Component {
 
   clickIcon(){
     const { navigate } = this.props.navigation
-    navigate("IconScene")
+    navigate("ImageScene")
   }
 
   render() {
@@ -37,7 +37,7 @@ export default class HomeScene extends Component {
       <View
         style={base.container}>
         <Text >啊啊啊啊啊~~不开森</Text>
-        <Button type="primary" onClick={this.clickIcon}>图标</Button>
+        <Button type="primary" onClick={this.clickIcon}>拍照&相册使用</Button>
       </View>
     )
   }
