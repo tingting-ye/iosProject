@@ -28,8 +28,8 @@ export default class ImageScene extends Component {
     return (
       <View
         style={base.container}>
-        <ImagePicker onReturn={this.onReturn}/>
-        <Text>{this.state.imgSrc.uri}</Text>
+        <ImagePicker onReturn={this.onReturn} title={"拍照"}/>
+        <Image source={this.state.imgSrc.uri}/>
       </View>
     )
   }

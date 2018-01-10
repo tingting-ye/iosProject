@@ -26,12 +26,26 @@ export default class HomeScene extends Component {
 
     clickIcon(){
         ImagePicker.showImagePicker(photoOptions,(response) =>{
-        if (response.didCancel){return}
-        this.props.onReturn(response)
+            if (response.didCancel) {
+                console.log('User cancelled image picker')
+                }
+                else if (response.error) {
+                console.log('ImagePicker Error: ', response.error)
+                }
+                else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton)
+                }
+                else {
+                let source = { uri: response.uri }
+            
+                // You can also display the image using data:
+                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+                this.props.onReturn(source)
+            }
         })
     }
 
     render() { 
-        return (<Button type="primary" onClick={this.clickIcon}>拍照&&相册</Button>)
+        return (<Button type="primary" onClick={this.clickIcon}>{this.props.title}</Button>)
     }
 }
