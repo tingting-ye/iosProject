@@ -9,7 +9,7 @@ var photoOptions = {
     takePhotoButtonTitle:'拍照',
     chooseFromLibraryButtonTitle:'选择相册',
     quality:0.75,
-    allowsEditing:true,
+    allowsEditing:false,
     noData:false,
     storageOptions: {
       skipBackup: true,
