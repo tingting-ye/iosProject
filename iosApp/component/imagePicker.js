@@ -46,6 +46,6 @@ export default class HomeScene extends Component {
     }
 
     render() { 
-        return (<Button type="primary" onClick={this.clickIcon}>{this.props.title}</Button>)
+        return (<Button onClick={this.clickIcon}>{this.props.title}</Button>)
     }
 }

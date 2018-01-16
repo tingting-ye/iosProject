@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, ScrollView, StyleSheet,Image} from 'react-native'
-import { Button } from 'antd-mobile'
+import { Button,WingBlank,WhiteSpace } from 'antd-mobile'
 
 import ImagePicker from '../component/imagePicker'
 
@@ -28,8 +28,12 @@ export default class ImageScene extends Component {
     return (
       <View
         style={base.container}>
-        <ImagePicker onReturn={this.onReturn} title={"拍照"}/>
-        <Image source={this.state.imgSrc.uri}/>
+        <WingBlank>
+          <WhiteSpace />
+          <ImagePicker onReturn={this.onReturn} title={"拍照"}/>
+          <WhiteSpace />
+          <Image source={{uri:this.state.imgSrc.uri}} style={{width:100,height:100}}/>
+        </WingBlank>
       </View>
     )
   }

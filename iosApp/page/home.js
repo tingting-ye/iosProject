@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity,  ScrollView, StyleSheet,Image} from 'react-native'
-import { Button } from 'antd-mobile'
+import { Button,WingBlank, WhiteSpace, List } from 'antd-mobile'
 
 import base from '../style/base'
+
+const Item = List.Item
 
 export default class HomeScene extends Component {
   constructor(props) {
@@ -17,13 +19,6 @@ export default class HomeScene extends Component {
     headerTitle: "首页", // 导航条标题
     headerLeft:null, // 导航条左侧返回键隐藏
     tabBarLabel: '首页',
-    // tabBarIcon: ({ tintColor, focused }) => (
-    //   <Icon
-    //     name={focused ? 'ios-home' : 'ios-home-outline'}
-    //     size={26}
-    //     style={{ color: tintColor }}
-    //   />
-    // ),
   })
 
   clickIcon(){
@@ -36,8 +31,18 @@ export default class HomeScene extends Component {
     return (
       <View
         style={base.container}>
-        <Text >啊啊啊啊啊~~不开森</Text>
-        <Button type="primary" onClick={this.clickIcon}>拍照&相册使用</Button>
+            <List renderHeader={() => '功能列表'}>
+              <Item
+                arrow="horizontal"
+                onClick={this.clickIcon}
+              >拍照功能</Item>
+              <Item
+                onClick={() => {}}
+                arrow="horizontal"
+              >
+                My Cost Ratio
+              </Item>
+            </List>
       </View>
     )
   }
