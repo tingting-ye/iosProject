@@ -12,9 +12,9 @@ export default class LoginScene extends Component {
       password: "",
     }
     this.forget = this.forget.bind(this) //忘记密码
-    this.username = this.username.bind(this) //忘记密码
-    this.password = this.password.bind(this) //忘记密码
-    this.login = this.login.bind(this) //忘记密码
+    this.username = this.username.bind(this) //获取用户名
+    this.password = this.password.bind(this) //获取用户密码
+    this.login = this.login.bind(this) //登录
   }
 
   static navigationOptions = {
@@ -39,8 +39,8 @@ export default class LoginScene extends Component {
     //   return
     // }
     // if (this.state.username === "admin" && this.state.password === "123") {
-      // alert('登录成功');
-      navigate("HomeScene")
+    // alert('登录成功');
+    navigate("HomeScene")
     // } else {
     //   alert('登录失败');
     // }

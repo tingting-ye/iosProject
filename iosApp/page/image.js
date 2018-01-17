@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, ScrollView, StyleSheet,Image} from 'react-native'
-import { Button,WingBlank,WhiteSpace } from 'antd-mobile'
+import { Text, View, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
+import { Button, WingBlank, WhiteSpace } from 'antd-mobile'
 
 import ImagePicker from '../component/imagePicker'
 
@@ -11,28 +11,28 @@ export default class ImageScene extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      imgSrc:{}
+      imgSrc: {}
     }
     this.onReturn = this.onReturn.bind(this)
   }
 
-  static navigationOptions = ({navigation, screenProps})=>({
+  static navigationOptions = ({ navigation, screenProps }) => ({
     headerTitle: "相册&拍照", // 导航条标题
   })
 
-  onReturn(res){
-    this.setState({imgSrc:res})
+  onReturn(res) {
+    this.setState({ imgSrc: res })
   }
 
-  render() { 
+  render() {
     return (
       <View
         style={base.container}>
         <WingBlank>
           <WhiteSpace />
-          <ImagePicker onReturn={this.onReturn} title={"拍照"}/>
+          <ImagePicker onReturn={this.onReturn} title={"拍照"} />
           <WhiteSpace />
-          <Image source={{uri:this.state.imgSrc.uri}} style={{width:100,height:100}}/>
+          <Image source={{ uri: this.state.imgSrc.uri }} style={{ width: 100, height: 100 }} />
         </WingBlank>
       </View>
     )
