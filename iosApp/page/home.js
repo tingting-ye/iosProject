@@ -10,9 +10,9 @@ const Item = List.Item
 export default class HomeScene extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-    }
-    this.clickIcon = this.clickIcon.bind(this)
+    this.state = {}
+    this.navigation = this.navigation.bind(this) //页面跳转
+    this.clickImage = this.clickImage.bind(this) //拍照
   }
 
   static navigationOptions = ({ navigation, screenProps }) => ({
@@ -21,7 +21,12 @@ export default class HomeScene extends Component {
     tabBarLabel: '首页',
   })
 
-  clickIcon() {
+  navigation(){
+    const { navigate } = this.props.navigation
+    navigate("ImageScene")
+  }
+
+  clickImage() {
     const { navigate } = this.props.navigation
     navigate("ImageScene")
   }
@@ -32,16 +37,8 @@ export default class HomeScene extends Component {
       <View
         style={base.container}>
         <List renderHeader={() => '功能列表'}>
-          <Item
-            arrow="horizontal"
-            onClick={this.clickIcon}
-          >拍照功能</Item>
-          <Item
-            onClick={() => { }}
-            arrow="horizontal"
-          >
-            My Cost Ratio
-              </Item>
+          <Item arrow="horizontal" onClick={this.navigation} >页面跳转</Item>
+          <Item arrow="horizontal" onClick={this.clickImage} >拍照</Item>
         </List>
       </View>
     )
