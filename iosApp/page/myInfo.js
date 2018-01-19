@@ -18,7 +18,6 @@ export default class HomeScene extends Component {
   })
 
   render() {
-    const { params } = this.props.navigation.state
     return (
       <View
         style={base.container}>
