@@ -27,7 +27,6 @@ export default class NavigationScene extends Component {
   componentDidMount() {
     //在static中使用this方法  
     this.props.navigation.setParams({
-      title: '自定义Header',
       navigatePress: this.onOpenChange
     })
   }
@@ -35,23 +34,21 @@ export default class NavigationScene extends Component {
   onOpenChange() { this.setState({ open: !this.state.open }) }
 
   render() {
-    const sidebar = (<List>
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14].map((i, index) => {
-        if (index === 0) {
-          return (<List.Item key={index} multipleLine >Cdf</List.Item>)
-        }
-        return (<List.Item key={index} >Cdf{index}</List.Item>)
-      })}
-    </List>)
+    const sidebar = (
+      <List>
+        <Text>杭州江干区四季青</Text>
+      </List>
+    )
 
     return (
       <View style={baseStyle.container}>
         <Drawer
+          style={navigationStyle.drawer}
           enableDragHandle
-          contentStyle={{ color: '#A6A6A6', textAlign: 'center'}}
           sidebar={sidebar}
           open={this.state.open}
           onOpenChange={() => this.onOpenChange}
+          drawerWidth={250}
         >
         <Text>fdsf</Text>
         </Drawer>
