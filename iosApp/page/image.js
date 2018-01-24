@@ -32,7 +32,7 @@ export default class ImageScene extends Component {
           <WhiteSpace />
           <ImagePicker onReturn={this.onReturn} title={"拍照"} />
           <WhiteSpace />
-          <Image source={{ uri: this.state.imgSrc.uri }} style={{ width: 100, height: 100 }} />
+          <Image source={{ uri: this.state.imgSrc.uri }} style={{ width: '100%', height: '100%' }} />
         </WingBlank>
       </View>
     )

@@ -23,7 +23,7 @@ export default class HomeScene extends Component {
 
   navigation(){
     const { navigate } = this.props.navigation
-    navigate("NavigationScene")
+    navigate("NavigationScene",{name:"react-navigation"})
   }
 
   clickImage() {
