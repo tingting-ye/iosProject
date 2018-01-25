@@ -16,19 +16,27 @@ export default class HomeScene extends Component {
   }
 
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: "首页", // 导航条标题
-    headerLeft: null, // 导航条左侧返回键隐藏
-    tabBarLabel: '首页',
+    headerTitle: "头部", //导航条标题
+    headerLeft: null, //设置导航条左侧。可以是按钮或者其他视图控件  
+    headerStyle:{ //设置导航条的样式。背景色，宽高等  
+      backgroundColor:'#4ECBFC',
+    },
+    //  title: "首页", //标题，如果设置了这个导航栏和标签栏的title就会变成一样的，不推荐使用   
+    //  header:null, //可以设置一些导航的属性，隐藏设置为null (此处隐藏，只隐藏当前页面头部导航)
+    //  headerRight: null, //设置导航条右侧。可以是按钮或者其他视图控件 
+    tabBarLabel: '底部',
   })
 
-  navigation(){
+  navigation() {
     const { navigate } = this.props.navigation
-    navigate("NavigationScene",{name:"react-navigation"})
+    navigate("NavigationScene", { name: "react-navigation" })
   }
 
   clickImage() {
     const { navigate } = this.props.navigation
-    navigate("ImageScene")
+    navigate("ImageScene",{callback: (data)=>{
+      console.log(data); // 打印值为：'回调参数'
+  }})
   }
 
   render() {

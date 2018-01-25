@@ -21,7 +21,10 @@ export default class ImageScene extends Component {
   })
 
   onReturn(res) {
-    this.setState({ imgSrc: res })
+    const {state}=this.props.navigation
+    this.setState({ imgSrc: res },()=>{
+      state.params.callback("已经讲刚刚拍好的照片显示出来！")
+    })
   }
 
   render() {

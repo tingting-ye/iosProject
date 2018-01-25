@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
-import { Drawer, List, NavBar, Icon,Button } from 'antd-mobile'
-
-import ColorSence from './childSence/colorSence'
+import { Drawer, List, NavBar, Icon, Button } from 'antd-mobile'
 
 import baseStyle from '../style/base'
 import navigationStyle from '../style/navigation'
@@ -36,7 +34,11 @@ export default class NavigationScene extends Component {
     })
   }
 
-  onOpenChange() { this.setState({ open: !this.state.open }) }
+  onOpenChange() {
+    // const { goBack } = this.props.navigation;
+    // goBack()
+     this.setState({ open: !this.state.open }) 
+    }
 
   render() {
     const sidebar = (
@@ -54,7 +56,18 @@ export default class NavigationScene extends Component {
     )
 
     return (
-      <ColorSence screenProps={{themeColor:'red'}}/>
+      <View style={baseStyle.container}>
+        <Drawer
+          style={navigationStyle.drawer}
+          enableDragHandle
+          sidebar={sidebar}
+          open={this.state.open}
+          onOpenChange={() => this.onOpenChange}
+          drawerWidth={250}
+        >
+          <Text>fdsf</Text>
+        </Drawer>
+      </View>
     )
   }
 }
