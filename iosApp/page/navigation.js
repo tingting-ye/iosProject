@@ -19,7 +19,7 @@ export default class NavigationScene extends Component {
   }
 
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: navigation.state.params.name,  // 设置导航栏标题，推荐screen：和导航的功能是一样的，对应界面名称，可以在其他页面通过这个screen传值和跳转。  
+    headerTitle: navigation.state.params.name,  // `设置导航栏标题，推荐screen：和导航的功能是一样的，对应界面名称，可以在其他页面通过这个screen传值和跳转。  
     headerRight: (
       <Text style={navigationStyle.rightTitle} onPress={navigation.state.params ? navigation.state.params.navigatePress : null} >
         <Icon type="ellipsis" />

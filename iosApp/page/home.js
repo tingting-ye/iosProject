@@ -16,7 +16,7 @@ export default class HomeScene extends Component {
   }
 
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: "头部", //导航条标题
+    headerTitle: "头部头部头部头部头部头部", //导航条标题
     headerLeft: null, //设置导航条左侧。可以是按钮或者其他视图控件  
     headerStyle:{ //设置导航条的样式。背景色，宽高等  
       backgroundColor:'#4ECBFC',

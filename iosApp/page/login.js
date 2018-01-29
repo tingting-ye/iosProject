@@ -47,6 +47,7 @@ export default class LoginScene extends Component {
   }
 
   render() {
+    console.log(this.props.navigation.state.params.title)
     return (
       <View style={styles.container}>
         <ImageBackground style={styles.img} source={require('../img/timg.jpeg')} resizeMode='cover'>
