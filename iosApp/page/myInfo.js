@@ -13,7 +13,7 @@ export default class HomeScene extends Component {
 
   static navigationOptions = ({ navigation, screenProps }) => ({
     headerTitle: "我的", // 导航条标题
-    headerLeft: null,
+    // headerLeft: null,
     tabBarLabel: '我的',
   })
 
