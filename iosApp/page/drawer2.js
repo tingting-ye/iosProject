@@ -4,7 +4,7 @@ import { Text, View, TouchableOpacity, Button, ScrollView, StyleSheet, Image } f
 
 import base from '../style/base'
 
-export default class HomeScene extends Component {
+export default class Drawer2 extends Component {
   constructor(props) {
     super(props)
     this.state = {
