@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navigator, StackNavigator, TabNavigator } from 'react-navigation'
 
-
 import HomeScene from '../home'
 import MyInfoScene from "../myInfo"
 

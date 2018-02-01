@@ -13,10 +13,11 @@ export default class HomeScene extends Component {
     this.state = {}
     this.navigation = this.navigation.bind(this) //页面跳转
     this.clickImage = this.clickImage.bind(this) //拍照
+    this.clickDrawer = this.clickDrawer.bind(this) //拍照
   }
 
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: "头部头部头部头部头部头部", //导航条标题
+    headerTitle: "头部", //导航条标题
     headerLeft: null, //设置导航条左侧。可以是按钮或者其他视图控件  
     headerStyle:{ //设置导航条的样式。背景色，宽高等  
       backgroundColor:'#4ECBFC',
@@ -37,7 +38,12 @@ export default class HomeScene extends Component {
     const { navigate } = this.props.navigation
     navigate("ImageScene",{callback: (data)=>{
       console.log(data); // 打印值为：'回调参数'
-  }})
+    }})
+  }
+
+  clickDrawer(){
+    const { navigate } = this.props.navigation
+    navigate("DrawerNavProject")
   }
 
   render() {
@@ -46,6 +52,7 @@ export default class HomeScene extends Component {
       <View
         style={base.container}>
         <List renderHeader={() => '功能列表'}>
+          <Item arrow="horizontal" onClick={this.clickDrawer} >DrawerNavigator</Item>
           <Item arrow="horizontal" onClick={this.navigation} >页面跳转</Item>
           <Item arrow="horizontal" onClick={this.clickImage} >拍照</Item>
         </List>

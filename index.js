@@ -4,6 +4,7 @@ import LoginScene from './iosApp/page/login'
 import MyFirstProject from './iosApp/page/tabNavigator/homeNav'
 import ImageScene from './iosApp/page/image'
 import NavigationScene from './iosApp/page/navigation'
+import DrawerNavProject from './iosApp/page/drawerNavigator/drawerNav'
 
 const App = StackNavigator({
 	// 如果没有设置initialRouteName，则默认第一个screen显示界面
@@ -25,6 +26,9 @@ const App = StackNavigator({
 	}, // icon
 	NavigationScene: {
 		screen: NavigationScene,
+	},
+	DrawerNavProject: {
+		screen: DrawerNavProject,
 	},
 }, {
 		initialRouteName: 'LoginScene', // 默认显示界面
