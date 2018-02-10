@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
-import { Button } from 'antd-mobile'
+import { Button, Icon } from 'antd-mobile'
 
 import base from '../style/base'
 
@@ -26,7 +26,7 @@ export default class Drawer1 extends Component {
       <View
         style={base.container}>
         <Text>drawer1</Text>
-        <Button onClick={this.click}>显示弹窗</Button>
+        <Button onClick={this.click}><Icon type={"ellipsis"} />显示弹窗</Button>
       </View>
     )
   }

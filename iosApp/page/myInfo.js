@@ -21,7 +21,7 @@ export default class HomeScene extends Component {
     return (
       <View
         style={base.container}>
-        <Text >好多信息。怎么破。。不知道哎</Text>
+        <Text >空页面噶。。。</Text>
       </View>
     )
   }
